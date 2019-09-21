@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CektrendShop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link rel="stylesheet" type="text/css" href="plugin/DataTables-1.10.18/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="plugin/jquery.bxslider.min.js"></script>
+    <script src="js/tris.js"></script>
+    <script type="text/javascript" charset="utf-8" src="plugin/DataTables-1.10.18/js/jquery.dataTables.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('#tabelkeren').DataTable();
+    });
+    </script>
+</head>
+
+
+
+<nav class="navigasi" id="myNav">
+    <a href="index.html" class="logo"><img src="img/store.png" style="width:15px;height:15px;padding:0px;margin:0px;"></a>
+    <a href="index.html">Beranda</a>
+    <a href="toko.html">Toko</a>
+    <a href="favorit.html">Favorit</a>
+    <a href="cart.html" class="active">Cart</a>
+    <a href="hubungi.html">Hubungi</a>
+    <a href="maps.html">Maps</a>
+    <a href="tentang.html" class="right">Tentang</a>
+    <a href="javascript:void(0);" id="menu" onclick="fungsibuka();" class="bukamenu" style="color:white;font-size: 16px;">☰</a>
+</nav>
+
+<div class="header">
+        <header class="site__header island">
+            <div class="wrap">
+             <img src="img/store.png" style="width:80px;height:80px">
+                <span id="animationSandbox" style="display: block;"><h1 class="site__title mega">CektrendShop</h1></span>
+              <span class="beta subhead">Grosir Aksesoris Komputer</span>
+            </div>
+          </header>
+</div>
+
+    <body>
+        <div class="content_wrapper">
+            <div class="content_single grey center" style="margin-bottom:20px;">
+                    <a href="#" class="content_title titler"><p class="titler"> Cart </p></a>
+                </div> 
+            <!-- Entri data barang -->
+            <table id="tabelkeren" class="tableshop">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Barang</th>
+                        <th class="left">Deskripsi</th>
+                        <th>Harga (Rp.) </th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="img/pc1.jpg"> <input id="namaproduk" class="titlez" value="PC Gaming AMD Ryzen" disabled/></td>
+                        <td><b>Spesifikasi :</b><br><p>Processor: AMD Ryzen</p><p>VGA : AMD RTX 8GB</p><p>RAM : 16GB</p><p>HDD: 1TB</p></td>
+                        <td class="center">5200000</td>
+                        <script>
+                            var qty = document.getElementById("qty").value();
+                            var brg = document.getElementById("namaproduk").value();
+                            console.log(qty);
+                            console.log(brg);
+                            function beli(){
+                                open('https://api.whatsapp.com/send?phone=62895339046899&text=Halo%20mau%20order%20gan%20barang%20dengan%20nama%20'+brg+'%20sebanyak%20'+qty);
+                            }
+                        </script>
+                                        <td>Banyak :<input id="qty" type="number" value="1" style="width: 26px;"><br><br><a id="btnbeli" href="javascript:void(0);" onclick="trans()" class="buttonku green center">Lanjutkan Transaksi</a>
+                    </tr>                            
+                </tbody>
+            </table>
+            <div id="shareBlock"></div>
+            <div class="kolum-100">
+                <a href="#"><img src="plugin/social-share-buttons-c/fb.png"></a>
+                <a href="#"><img src="plugin/social-share-buttons-c/pinterest.png"></a>
+                <a href="#"><img src="plugin/social-share-buttons-c/twitter.png"></a>
+            </div> <br><br><br><br><br><br>
+        </div>
+    </body>
+
+
+    <footer class="footer">
+        <div class="left_2 black center">
+            <img src="img/maps-and-flags.png" class="logofooter" >
+        <h1>Lokasi : </h1>
+        <p>Jl. Contoh, no. 12, dll.</p>
+        </div>
+
+        <div class="right_2 black center">
+             <img src="img/customer-service.png" class="logofooter" >
+            <h1>Hubungi : </h1>
+            <p>No : 0895332321442</p>
+        </div>  
+
+        <div class="copyright center">
+                CektrendShop | Trisna Nugraha | 432007006170183 | UAS PK4 Web
+            </div>
+    </footer>
+    
+</html>

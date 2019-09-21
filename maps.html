@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CektrendShop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="plugin/jquery.bxslider.min.js"></script>
+    <script src="js/tris.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0v8_AHDqwL8stQLEMWYQgxfw__b5F0hU&callback=myMap"></script>
+</head>
+
+
+
+<nav class="navigasi" id="myNav">
+    <a href="index.html" class="logo"><img src="img/store.png" style="width:15px;height:15px;padding:0px;margin:0px;"></a>
+    <a href="index.html">Beranda</a>
+    <a href="toko.html">Toko</a>
+    <a href="favorit.html">Favorit</a>
+    <a href="cart.html">Cart</a>
+    <a href="hubungi.html">Hubungi</a>
+    <a href="maps.html" class="active">Maps</a>
+    <a href="tentang.html" class="right">Tentang</a>
+    <a href="javascript:void(0);" id="menu" onclick="fungsibuka();" class="bukamenu" style="color:white;font-size: 16px;">☰</a>
+</nav>
+
+<div class="header">
+        <header class="site__header island">
+            <div class="wrap">
+             <img src="img/store.png" style="width:80px;height:80px">
+                <span id="animationSandbox" style="display: block;"><h1 class="site__title mega">CektrendShop</h1></span>
+              <span class="beta subhead">Grosir Aksesoris Komputer</span>
+            </div>
+          </header>
+        
+        </div>
+
+    <body>
+    <div class="content_wrapper">
+        <div class="content_single grey center">
+            <a href="#" class="content_title titler"><p class="titler"> Maps </p></a>
+        </div> 
+
+        <div id="googleMap" style="width:100%;height:600px;"></div>
+        <div id="shareBlock"></div>
+        <div class="kolum-100">
+            <a href="#"><img src="plugin/social-share-buttons-c/fb.png"></a>
+            <a href="#"><img src="plugin/social-share-buttons-c/pinterest.png"></a>
+            <a href="#"><img src="plugin/social-share-buttons-c/twitter.png"></a>
+        </div> <br><br><br><br><br><br>
+<script>
+function myMap() {
+//deklarasi variabel kota beserta koordinatnya
+var indonesia =new google.maps.LatLng(-1.8692561,77.7180656); 
+var tasik =new google.maps.LatLng(-7.3067171,108.2075641); 
+
+
+//membuat peta pada posisi kordinat indonesia
+var buatpeta= {
+  center:tasik,
+  zoom:17,
+  mapTypeId: google.maps.MapTypeId.Satellite
+};
+var petaindonesia = new google.maps.Map(document.getElementById("googleMap"),buatpeta);
+
+//Menambahkan marker tasik
+var marker1 = new google.maps.Marker({
+  position:tasik,
+  animation:google.maps.Animation.BOUNCE,
+  icon:'<img src="img/marker1.png" width="25" height="25"/>',
+  map:petaindonesia,
+
+});
+
+var infowindow = new google.maps.InfoWindow({
+    content:"Lokasi CektrendShop"
+});
+infowindow.open(petaindonesia,marker1);
+}
+</script>
+
+</div>
+    </body>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0v8_AHDqwL8stQLEMWYQgxfw__b5F0hU&callback=myMap"></script>
+
+    <footer class="footer">
+        <div class="left_2 black center">
+            <img src="img/maps-and-flags.png" class="logofooter" >
+        <h1>Lokasi : </h1>
+        <p>Jl. Contoh, no. 12, dll.</p>
+        </div>
+
+        <div class="right_2 black center">
+             <img src="img/customer-service.png" class="logofooter" >
+            <h1>Hubungi : </h1>
+            <p>No : 0895332321442</p>
+        </div>  
+
+        <div class="copyright center">
+                CektrendShop | Trisna Nugraha | 432007006170183 | UAS PK4 Web
+            </div>
+    </footer>
+    
+</html>
